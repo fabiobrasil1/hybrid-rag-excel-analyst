@@ -106,13 +106,40 @@ hybrid-rag-excel-analyst/
 ├── requirements.txt
 └── README.md
 ▶️ Getting Started
-1. Clone the repository
-git clone https://github.com/your-username/hybrid-rag-excel-analyst.git
-cd hybrid-rag-excel-analyst
-2. Install dependencies
-pip install -r requirements.txt
-3. Run the application
-python app.py
+
+1. Entre na pasta do projeto (ou clone o repositório e entre na pasta).
+
+2. Crie e ative um ambiente virtual (recomendado):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -U pip setuptools wheel
+```
+
+3. Instale as dependências (use **um** dos dois):
+
+```bash
+pip install -e .                 # recomendado: instala o pacote src/excel_analyst em modo editável
+# ou: pip install -r requirements.txt
+```
+
+4. Configure variáveis de ambiente (opcional, para LLM):
+
+```bash
+cp .env.example .env
+# Edite .env e defina OPENAI_API_KEY se for usar perguntas em linguagem natural.
+```
+
+5. Suba o Streamlit **a partir da raiz do repositório** (para ler `.streamlit/config.toml`):
+
+```bash
+python -m streamlit run apps/streamlit_app.py
+```
+
+O projeto inclui `.streamlit/config.toml` com `showEmailPrompt = false`, para não aparecer o prompt de e-mail no terminal (exige rodar o comando **na raiz do repositório**).
+
+Se aparecer `command not found: streamlit`, você não tem o venv ativado ou não instalou as dependências. Use sempre `python -m streamlit run ...` com o mesmo `python` do passo 3, ou após `source .venv/bin/activate` use `streamlit run apps/streamlit_app.py`.
 📊 Example Workflow
 Upload an Excel file
 System reads and understands schema
