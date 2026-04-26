@@ -83,7 +83,7 @@ profile_active = profiles[active]
 left, right = st.columns(2)
 with left:
     st.subheader("Preview")
-    st.dataframe(df_active.head(25), use_container_width=True)
+    st.dataframe(df_active.head(25), width="stretch")
 with right:
     st.subheader("Schema inferido")
     st.json(profile_active.model_dump(), expanded=False)
@@ -125,7 +125,7 @@ if ask:
             st.subheader("Resultado numérico (engine)")
             res = result.result
             out_df = pd.DataFrame(res["rows"], columns=res["columns"])
-            st.dataframe(out_df, use_container_width=True)
+            st.dataframe(out_df, width="stretch")
             if res.get("truncated"):
                 st.caption(f"Pré-visualização truncada; total de linhas: {res.get('row_count')}")
         st.subheader("Resposta (texto)")
