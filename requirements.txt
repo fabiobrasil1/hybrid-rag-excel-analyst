@@ -1,0 +1,14 @@
+# Uso: python3 -m venv .venv && source .venv/bin/activate && pip install -U pip && pip install -r requirements.txt
+# Preferível para desenvolvimento: pip install -e . (lê dependências do pyproject.toml)
+
+pandas>=2.2
+openpyxl>=3.1
+pyarrow>=15
+duckdb>=1.0
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
+chromadb>=0.5
+openai>=1.40
+streamlit>=1.33
+numpy>=1.26
