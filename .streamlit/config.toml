@@ -1,0 +1,9 @@
+# Rode `streamlit run` a partir da raiz do repositório para este arquivo valer.
+# https://docs.streamlit.io/develop/api-reference/configuration/config.toml
+
+[browser]
+gatherUsageStats = false
+
+[server]
+# Desliga o prompt interativo de e-mail no terminal na primeira execução.
+showEmailPrompt = false
