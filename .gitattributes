@@ -1,0 +1,24 @@
+# Normalização de fim de linha (evita diffs ruidosos e inconsistências)
+* text=auto eol=lf
+
+# Binários explícitos
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.parquet binary
+*.duckdb binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+*.xlsx binary
+*.xls binary
+*.xlsm binary
+
+# Linguist: reduzir peso de vendored/generated em estatísticas do GitHub (opcional)
+# *.lock linguist-generated=true
