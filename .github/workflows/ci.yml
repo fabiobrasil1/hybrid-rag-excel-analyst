@@ -63,14 +63,11 @@ jobs:
 
       - name: Install audit tools
         run: |
-          # pip 26.0.1 is flagged by CVE-2026-3219 in pip-audit.
-          # Keep scanner environment on a known non-vulnerable major line.
-          python -m pip install --upgrade "pip<26"
-          pip install -e .
+          python -m pip install --upgrade pip
           pip install pip-audit
 
       - name: Run pip-audit
-        run: pip-audit
+        run: pip-audit -r requirements.txt
 
   container:
     name: Build container image
