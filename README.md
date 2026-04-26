@@ -140,6 +140,16 @@ python -m streamlit run apps/streamlit_app.py
 O projeto inclui `.streamlit/config.toml` com `showEmailPrompt = false`, para não aparecer o prompt de e-mail no terminal (exige rodar o comando **na raiz do repositório**).
 
 Se aparecer `command not found: streamlit`, você não tem o venv ativado ou não instalou as dependências. Use sempre `python -m streamlit run ...` com o mesmo `python` do passo 3, ou após `source .venv/bin/activate` use `streamlit run apps/streamlit_app.py`.
+
+## 🚦 CI/CD (deploy automático)
+
+Foi adicionada uma pipeline moderna com GitHub Actions:
+
+- **CI:** lint (`ruff`), testes (`pytest`), auditoria de dependências (`pip-audit`) e build de imagem Docker.
+- **CD:** deploy automático em produção quando o `CI` do `main` passar, com smoke test de saúde.
+
+Configuração passo a passo em `docs/CI_CD.md`.
+
 📊 Example Workflow
 Upload an Excel file
 System reads and understands schema
